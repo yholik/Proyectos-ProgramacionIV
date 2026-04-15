@@ -14,7 +14,7 @@ public class FechaFestiva implements Comparable<FechaFestiva>{
 	}
 	
 	
-	/*----------- GETTERS, SETTERS, TOSTRING -----------*/	
+	/*-------------------------------------------*/
 	
 	
 	public int getDia() {
@@ -53,53 +53,24 @@ public class FechaFestiva implements Comparable<FechaFestiva>{
 		return this.dia + (this.mes * 30);		
 	}
 
+	
+	/*-------------------------------------------*/
+	
+	
 	@Override
 	public String toString() {
 		return "FechaFestiva [dia:" + dia + ", mes:" + mes + ", nombre:" + nombre + ", fanatismo:" + fanatismo + "]";
-	}
+	}	
 	
 	
-	
-	/*------------ COMPARADORES --------------*/
-	public int compareMes(FechaFestiva a, FechaFestiva b) {
-		int resultado = 0;
-		
-		if(a.mes < b.mes) {
-			resultado = -1;
-		}
-		else if(a.mes > b.mes){			
-			resultado = 1;
-		}
-		
-		return resultado;
-		
-	}
-
-	public int compareDia(FechaFestiva a, FechaFestiva b) {
-		int resultado = 0;
-		return resultado = Integer.compare(a.getDiasTotales(),b.getDiasTotales());
-		
-	}
-	
-	public int compareNombre(FechaFestiva a, FechaFestiva b) {
-		int resultado = 0;
-		String s1 = a.nombre;
-		String s2 = b.nombre;
-		return resultado = s1.compareTo(s2); 
-	}
-	
-	public int compareFanatismo(FechaFestiva a, FechaFestiva b) {
-		int resultado = 0;
-		double a1 = a.getFanatismo();
-		double a2 = b.getFanatismo();
-		return resultado = Double.compare(a1, a2); 
-	}
+	/*----------ORDENAMIENTO NATURAL-------------*/
 	
 	@Override
 	public int compareTo(FechaFestiva otraFecha) {		
 		return this.getDiasTotales() - otraFecha.getDiasTotales();
 	}
 
+	
 	/*-------------------------------------------*/
 	
 	
